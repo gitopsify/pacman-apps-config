@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cube-cd-production
+  name: chris-cube-cd-development
   namespace: openshift-gitops
 spec:
-  project: cube
+  project: chris-cube
   destination:
-    namespace: cube-production
+    namespace: chris-cube-development
     server: https://kubernetes.default.svc
   ignoreDifferences:
   - group: argoproj.io
@@ -30,9 +30,9 @@ spec:
     - /spec/host
     kind: Route
   source:
-    path: env/03-production
-    targetRevision: production
-    repoURL: https://github.com/gitopsify/cube-cd.git
+    path: env/01-dev
+    targetRevision: main
+    repoURL: https://github.com/gitopsify/chris-cube-cd.git
   syncPolicy:
     automated: # automated sync by default retries failed attempts 5 times with following delays between attempts ( 5s, 10s, 20s, 40s, 80s ); retry controlled using `retry` field.
       prune: true # Specifies if resources should be pruned during auto-syncing ( false by default ).
