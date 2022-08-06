@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: chris-ui-ci-production
+  name: cube-cd-production
   namespace: openshift-gitops
 spec:
-  project: chris-ui
+  project: cube
   destination:
-    namespace: chris-ui-ci
+    namespace: cube-production
     server: https://kubernetes.default.svc
   ignoreDifferences:
   - group: argoproj.io
@@ -30,9 +30,9 @@ spec:
     - /spec/host
     kind: Route
   source:
-    path: production-ci
-    targetRevision: main
-    repoURL: https://github.com/gitopsify/chris-ui-ci.git
+    path: env/03-production
+    targetRevision: production
+    repoURL: https://github.com/gitopsify/cube-cd.git
   syncPolicy:
     automated: # automated sync by default retries failed attempts 5 times with following delays between attempts ( 5s, 10s, 20s, 40s, 80s ); retry controlled using `retry` field.
       prune: true # Specifies if resources should be pruned during auto-syncing ( false by default ).
@@ -40,7 +40,7 @@ spec:
       allowEmpty: false # Allows deleting all application resources during automatic syncing ( false by default ).
     syncOptions:     # Sync options which modifies sync behavior
     - Validate=true # disables resource validation (equivalent to 'kubectl apply --validate=false') ( true by default ).
-    - CreateNamespace=false # Namespace Auto-Creation ensures that namespace specified as the application destination exists in the destination cluster.
+    - CreateNamespace=true # Namespace Auto-Creation ensures that namespace specified as the application destination exists in the destination cluster.
     - PrunePropagationPolicy=foreground # Supported policies are background, foreground and orphan.
     - PruneLast=true # Allow the ability for resource pruning to happen as a final, implicit wave of a sync operation
     retry:
