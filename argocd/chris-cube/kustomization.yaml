@@ -2,7 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-- argo-app.yaml
+- chris-cube-chris-ui-argo-app.yaml
 - chris-cube-ci.yaml
 - chris-cube-ci-production.yaml
 - env/chris-cube-cd-development.yaml
