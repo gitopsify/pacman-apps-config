@@ -9,4 +9,4 @@ resources:
 - env/chris-cube-cd-qa.yaml
 - env/chris-cube-cd-production.yaml
 - chris-cube-project.yaml
-- baseimage.yaml
+- chris-cube-chris-ui-baseimage.yaml
