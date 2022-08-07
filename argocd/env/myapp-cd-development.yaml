@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: chris-ui-base-image
+  name: myapp-cd-development
   namespace: openshift-gitops
 spec:
-  project: chris
+  project: myapp
   destination:
-    namespace: chris-ui-ci
+    namespace: myapp-development
     server: https://kubernetes.default.svc
   ignoreDifferences:
   - group: argoproj.io
@@ -30,9 +30,9 @@ spec:
     - /spec/host
     kind: Route
   source:
-    path: base-image
+    path: env/01-dev
     targetRevision: main
-    repoURL: https://github.com/gitopsify/chris-ui-ci.git
+    repoURL: https://github.com/veniceofcode/myApp-cd.git
   syncPolicy:
     automated: # automated sync by default retries failed attempts 5 times with following delays between attempts ( 5s, 10s, 20s, 40s, 80s ); retry controlled using `retry` field.
       prune: true # Specifies if resources should be pruned during auto-syncing ( false by default ).

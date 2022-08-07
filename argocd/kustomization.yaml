@@ -3,10 +3,10 @@ kind: Kustomization
 
 resources:
 - argo-app.yaml
-- cube-ci.yaml
-- cube-ci-production.yaml
-- env/cube-cd-development.yaml
-- env/cube-cd-qa.yaml
-- env/cube-cd-production.yaml
+- myapp-ci.yaml
+- myapp-ci-production.yaml
+- env/myapp-cd-development.yaml
+- env/myapp-cd-qa.yaml
+- env/myapp-cd-production.yaml
 - chris-project.yaml
 - baseimage.yaml

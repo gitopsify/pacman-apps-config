@@ -12,7 +12,6 @@ spec:
 
   # Allow manifests to deploy from specific Git repos
   sourceRepos:
-  - https://github.com/veniceofcode/myApp*
   - https://github.com/gitopsify/chris*
 
   # Limit the namespaces to which the project can deploy
