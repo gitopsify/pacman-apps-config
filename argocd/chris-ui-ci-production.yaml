@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: chris-ui-ci-production
+  name: chris-ci-production
   namespace: openshift-gitops
 spec:
   project: chris
