@@ -10,3 +10,11 @@ resources:
 - env/chris-ui-cd-production.yaml
 - chris-ui-ci.yaml
 - chris-ui-baseimage.yaml
+- chris-cube-argo-app.yaml
+- chris-cube-ci.yaml
+- chris-cube-ci-production.yaml
+- env/chris-cube-cd-development.yaml
+- env/chris-cube-cd-qa.yaml
+- env/chris-cube-cd-production.yaml
+- chris-cube-project.yaml
+- chris-cube-baseimage.yaml
