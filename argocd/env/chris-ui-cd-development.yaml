@@ -4,7 +4,7 @@ metadata:
   name: chris-ui-cd-development
   namespace: openshift-gitops
 spec:
-  project: chris-ui
+  project: chris
   destination:
     namespace: chris-ui-development
     server: https://kubernetes.default.svc
