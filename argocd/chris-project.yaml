@@ -13,6 +13,7 @@ spec:
   # Allow manifests to deploy from specific Git repos
   sourceRepos:
   - https://github.com/gitopsify/chris*
+  - https://github.com/gitopsify/cube*
 
   # Limit the namespaces to which the project can deploy
   destinations:
