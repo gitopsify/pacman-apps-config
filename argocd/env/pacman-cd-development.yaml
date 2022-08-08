@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: chris-ui-cd-development
+  name: pacman-cd-development
   namespace: openshift-gitops
 spec:
-  project: chris
+  project: pacman
   destination:
-    namespace: chris-ui-development
+    namespace: pacman-development
     server: https://kubernetes.default.svc
   ignoreDifferences:
   - group: argoproj.io
@@ -32,7 +32,7 @@ spec:
   source:
     path: env/01-dev
     targetRevision: main
-    repoURL: https://github.com/gitopsify/chris-ui-cd.git
+    repoURL: https://github.com/gitopsify/pacman-cd.git
   syncPolicy:
     automated: # automated sync by default retries failed attempts 5 times with following delays between attempts ( 5s, 10s, 20s, 40s, 80s ); retry controlled using `retry` field.
       prune: true # Specifies if resources should be pruned during auto-syncing ( false by default ).
